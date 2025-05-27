@@ -3,6 +3,8 @@ name: Update Citations Badge
 on:
   schedule:
     - cron: '0 0 * * *'  # 每天 UTC 0 点运行一次
+    - cron: '0 8 * * *'
+    - cron: '0 20 * * *'
   workflow_dispatch:
 
 jobs:
@@ -23,7 +25,7 @@ jobs:
 
     - name: Run scraper 10 times
       run: |
-        for i in {1..10}
+        for i in {1..2}
         do
           echo "Run #$i"
           python update_scholar.py
